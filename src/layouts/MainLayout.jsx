@@ -3,10 +3,10 @@ import Header from "../components/Hearder";
 
 const MainLayout = () => {
   return (
-      <>
+      <div id="wrapper">
           <Header />
           <Outlet />
-      </>
+      </div>
   )
 }
 
