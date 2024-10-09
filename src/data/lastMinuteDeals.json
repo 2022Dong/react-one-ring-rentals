@@ -1,0 +1,31 @@
+[
+    {
+      "title": "Private Beach",
+      "location": "Lossarnach, Eriado",
+      "date": "Available Now",
+      "image": "http://placehold.it/100x100",
+      "link": "blog-detail.html"
+    },
+    {
+      "title": "Mountain Views",
+      "location": "Hyarnustar, Rhovanion",
+      "date": "Available on 24 July",
+      "image": "http://placehold.it/100x100",
+      "link": "blog-detail.html"
+    },
+    {
+      "title": "Heart of the Village",
+      "location": "Minhiriath, Eriador",
+      "date": "Available 5 July",
+      "image": "http://placehold.it/100x100",
+      "link": "blog-detail.html"
+    },
+    {
+      "title": "The City Life",
+      "location": "West Beleriand, Mordor",
+      "date": "Available 6 July",
+      "image": "http://placehold.it/100x100",
+      "link": "blog-detail.html"
+    }
+  ]
+  

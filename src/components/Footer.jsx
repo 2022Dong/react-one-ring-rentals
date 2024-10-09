@@ -1,5 +1,6 @@
 import logo from '../assets/images/logo.png';
 import Copyright from './Copyright';
+import regionsData from '../data/regions.json';
 
 const Footer = () => {
   return (
@@ -26,72 +27,44 @@ const Footer = () => {
                 <li><a href="#">List your rental</a></li>
                 <li><a href="#">Read our FAQs</a></li>
               </ul>
-            </div>
-            <div className="block col-sm-6">
-              <h3>Popular regions</h3>
-              <div className="row">
-                <div className="col-sm-6">
-                  <ul className="footer-listings">
-                    <li>
+          </div>
+          
+
+          <div className="block col-sm-6">
+            <h3>Popular Regions</h3>
+            <div className="row">
+              <div className="col-sm-6">
+                <ul className="footer-listings">
+                  {regionsData.slice(0, 3).map((region) => (
+                    <li key={region.name}>
                       <div className="image">
-                        <a href="properties-detail.html"
-                          ><img src="http://placehold.it/760x670" alt=""
-                        /></a>
+                        <a href={region.link}>
+                          <img src={region.image} alt={region.name} />
+                        </a>
                       </div>
-                      <p><a href="properties-detail.html">Rhovanion</a></p>
+                      <p><a href={region.link}>{region.name}</a></p>
                     </li>
-                    <li>
+                  ))}
+                </ul>
+              </div>
+              <div className="col-sm-6">
+                <ul className="footer-listings">
+                  {regionsData.slice(3, 6).map((region) => (
+                    <li key={region.name}>
                       <div className="image">
-                        <a href="properties-detail.html"
-                          ><img src="http://placehold.it/760x670" alt=""
-                        /></a>
+                        <a href={region.link}>
+                          <img src={region.image} alt={region.name} />
+                        </a>
                       </div>
-                      <p><a href="properties-detail.html">Eriador</a></p>
+                      <p><a href={region.link}>{region.name}</a></p>
                     </li>
-                    <li>
-                      <div className="image">
-                        <a href="properties-detail.html"
-                          ><img src="http://placehold.it/760x670" alt=""
-                        /></a>
-                      </div>
-                      <p>
-                        <a href="properties-detail.html">Bay of Belfalas</a>
-                      </p>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-sm-6">
-                  <ul className="footer-listings">
-                    <li>
-                      <div className="image">
-                        <a href="properties-detail.html"
-                          ><img src="http://placehold.it/760x670" alt=""
-                        /></a>
-                      </div>
-                      <p><a href="properties-detail.html">Mordor</a></p>
-                    </li>
-                    <li>
-                      <div className="image">
-                        <a href="properties-detail.html"
-                          ><img src="http://placehold.it/760x670" alt=""
-                        /></a>
-                      </div>
-                      <p><a href="properties-detail.html">Arnor</a></p>
-                    </li>
-                    <li>
-                      <div className="image">
-                        <a href="properties-detail.html"
-                          ><img src="http://placehold.it/760x670" alt=""
-                        /></a>
-                      </div>
-                      <p><a href="properties-detail.html">Forlindon</a></p>
-                    </li>
-                  </ul>
-                </div>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
         {/* <!-- BEGIN COPYRIGHT --> */}
         <div id="copyright">

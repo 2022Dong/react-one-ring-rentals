@@ -75,8 +75,8 @@ const Hearder = () => {
 
               <ul className="nav navbar-nav">
                 <li><Link to="/">Find a Rental</Link></li>
-                <li><Link to="*">List your rental(TODO)</Link></li>
-                <li><Link to="*">Travel Guides(TODO)</Link></li>
+                <li><Link to="#">List your rental(TODO)</Link></li>
+                <li><Link to="#">Travel Guides(TODO)</Link></li>
                 <li><Link to="regions">Regions</Link></li>
                 <li><Link to="news">News</Link></li>
                 <li><Link to="contact">Contact</Link></li>
