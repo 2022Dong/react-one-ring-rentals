@@ -1,4 +1,5 @@
 import logo from '../assets/images/logo.png';
+import Copyright from './Copyright';
 
 const Footer = () => {
   return (
@@ -96,8 +97,8 @@ const Footer = () => {
         <div id="copyright">
           <div className="container">
             <div className="row">
-              <div className="col-sm-12">
-                &copy; 2014 One Ring Rentals
+            <div className="col-sm-12">
+              <Copyright />            
 
                 {/* <!-- BEGIN SOCIAL NETWORKS --> */}
                 <ul className="social-networks">
