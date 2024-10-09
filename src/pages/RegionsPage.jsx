@@ -63,12 +63,12 @@ const RegionsPage = () => {
                     <img src="http://placehold.it/760x670" alt="" />
                   </div>
                 </div>
-              </div>
+              </div>              
             </div>
+            <Copyright />
           </div>
         </div>
       </div>
-      <Copyright />
     </>
   )
 }

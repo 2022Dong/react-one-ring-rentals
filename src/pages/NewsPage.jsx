@@ -93,10 +93,10 @@ const NewsPage = () => {
                 </div>
               </div>
             </div>
+            <Copyright />
           </div>
         </div>
       </div>
-          <Copyright />
       </>
   )
 }

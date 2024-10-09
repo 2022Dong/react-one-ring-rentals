@@ -98,7 +98,7 @@ const Footer = () => {
           <div className="container">
             <div className="row">
             <div className="col-sm-12">
-              <Copyright isHome={ true } />            
+              <Copyright />            
 
                 {/* <!-- BEGIN SOCIAL NETWORKS --> */}
                 <ul className="social-networks">

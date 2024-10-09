@@ -56,10 +56,10 @@ const ContactPage = () => {
                 </form>
               </div>
             </div>
+            <Copyright />
           </div>
         </div>
-      </div>
-      <Copyright />
+      </div>      
     </>
   )
 }
