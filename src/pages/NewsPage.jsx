@@ -1,10 +1,9 @@
-import React from 'react'
-
+import Copyright from "../components/Copyright"
 const NewsPage = () => {
   return (
-    <div>
-      NewsPage
-    </div>
+      <>
+          <Copyright />
+      </>
   )
 }
 

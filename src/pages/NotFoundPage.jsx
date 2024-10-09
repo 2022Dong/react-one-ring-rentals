@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaExclamationTriangle } from "react-icons/fa";
+import Copyright from "../components/Copyright";
 
 const NotFoundPage = () => {
   return (
@@ -13,6 +14,10 @@ const NotFoundPage = () => {
       >
         Go Back
       </Link>
+      <div>
+        <Copyright />    
+      </div>
+      
     </section>
   );
 };

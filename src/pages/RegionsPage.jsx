@@ -1,10 +1,10 @@
-import React from 'react'
+import Copyright from "../components/Copyright"
 
 const RegionsPage = () => {
   return (
-    <div>
-      RegionsPage
-    </div>
+    <>
+      <Copyright />
+    </>
   )
 }
 
