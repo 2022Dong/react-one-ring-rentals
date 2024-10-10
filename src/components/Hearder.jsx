@@ -4,6 +4,9 @@ import { useState } from 'react';
 const Hearder = () => {
   const [searchInput, setSearchInput] = useState("");
 
+  // Initialize state, and set default language.
+  const [currentLanguage, setCurrentLanguage] = useState("English");
+
   const handleSubmit = (e) => { 
     const params = {}
     e.preventDefault();
@@ -27,12 +30,13 @@ const Hearder = () => {
               <li className="divider"></li>
               <li>
                 <div className="language-switcher">
-                  <span><i className="fa fa-globe"></i> English</span>
-                  <ul>
-                    <li><Link to="#">Deutsch</Link></li>
-                    <li><Link to="#">Espa&ntilde;ol</Link></li>
-                    <li><Link to="#">Fran&ccedil;ais</Link></li>
-                    <li><Link to="#">Portugu&ecirc;s</Link></li>
+                    <span><i className="fa fa-globe"></i> { currentLanguage }</span>
+                    <ul>
+                      {/* Change language on click */}
+                    <li><Link to="#" onClick={() => setCurrentLanguage('Deutsch')}>Deutsch</Link></li>
+                    <li><Link to="#" onClick={() => setCurrentLanguage('Español')}>Español</Link></li>
+                    <li><Link to="#" onClick={() => setCurrentLanguage('Français')}>Français</Link></li>
+                    <li><Link to="#" onClick={() => setCurrentLanguage('Português')}>Português</Link></li>
                   </ul>
                 </div>
               </li>
