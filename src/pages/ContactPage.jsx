@@ -1,6 +1,29 @@
 import Copyright from "../components/Copyright"
+import { useState } from "react";
 
 const ContactPage = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    const params = {
+      name,
+      email,
+      subject,
+      message,
+    };
+
+    e.preventDefault();
+    if (name) params.data = name;
+    if (email) params.data = email;
+    if (subject) params.data = subject;
+    if (message) params.data = message;
+
+    // console.log(params);
+  }
+
   return (
     <>
       <div className="content">
@@ -9,44 +32,52 @@ const ContactPage = () => {
             <div className="main col-sm-12">
               <h1 className="section-title">Contact Us</h1>
               <div className="contact-form">
-                <form action="contact.php" method="post">
+                <form onSubmit={ handleSubmit }>
                   <div className="form-group">
-                    <label for="name">Name:</label>
+                    <label htmlFor="name">Name:</label>
                     <input
                       type="text"
                       className="form-control"
                       id="name"
                       name="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       required
                     />
                   </div>
                   <div className="form-group">
-                    <label for="email">Email:</label>
+                    <label htmlFor="email">Email:</label>
                     <input
                       type="email"
                       className="form-control"
                       id="email"
                       name="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                       required
                     />
                   </div>
                   <div className="form-group">
-                    <label for="subject">Subject:</label>
+                    <label htmlFor="subject">Subject:</label>
                     <input
                       type="text"
                       className="form-control"
                       id="subject"
                       name="subject"
+                      value={subject}
+                      onChange={(e) => setSubject(e.target.value)}
                       required
                     />
                   </div>
                   <div className="form-group">
-                    <label for="message">Message:</label>
+                    <label htmlFor="message">Message:</label>
                     <textarea
                       className="form-control"
                       id="message"
                       name="message"
                       rows="5"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
                       required
                     ></textarea>
                   </div>

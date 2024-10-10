@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
+import { useState } from 'react';
 const Hearder = () => {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSubmit = (e) => { 
+    const params = {}
+    e.preventDefault();
+    if (searchInput) params.data = searchInput;
+  }
+
   return (
     <header id="header">
     <div id="top-bar">
@@ -53,12 +62,13 @@ const Hearder = () => {
             /></Link>
             {/* <!-- BEGIN SEARCH --> */}
             <div id="sb-search" className="sb-search">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <input
                   className="sb-search-input"
                   placeholder="Search..."
                   type="text"
-                  value=""
+                  value={searchInput}
+                  onChange={(e) => setSearchInput(e.target.value)}
                   name="search"
                   id="search"
                 />
