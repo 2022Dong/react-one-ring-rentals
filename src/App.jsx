@@ -11,6 +11,7 @@ import HomePage from './pages/HomePage';
 import ContactPage from "./pages/ContactPage";
 import NewsPage from "./pages/NewsPage";
 import RegionsPage from "./pages/RegionsPage";
+import ArticlesPage from "./pages/ArticlesPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/news" element={<NewsPage />} />
       <Route path="/regions" element={<RegionsPage />} />
+      <Route path="/articles/:id" element={<ArticlesPage />} />
     </Route>
     )
 );

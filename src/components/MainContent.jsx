@@ -1,21 +1,31 @@
-import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import propertiesData from '../data/properties.json';
 import regionsData from '../data/regions.json';
 import articlesData from '../data/articles.json';
 
 const MainContent = () => {
+  const [showFullDescription, setShowFullDescription] = useState(false);
+  
+  const toggleDescription = (id) => {
+    setShowFullDescription((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id]
+    }));
+  };
+
   return (
     <div className="main col-sm-8">
       <h1 className="section-title">Featured Properties</h1>
 
       <div className="grid-style1 clearfix">
-        {propertiesData.map((property, index) => (
+        {propertiesData.slice(0, 6).map((property, index) => (
           <div className="item col-md-4" key={index}>
             <div className="image">
-              <a href={property.link}>
+              <Link to={property.link}>
                 <h3>{property.title}</h3>
                 <span className="location">{property.location}</span>
-              </a>
+              </Link>
               <img src={property.image} alt="" />
             </div>
             <div className="price">
@@ -36,10 +46,10 @@ const MainContent = () => {
           <div id="regions">
             {regionsData.map((region, index) => (
               <div className="item" key={index}>
-                <a href={region.link}>
+                <Link to={region.link}>
                   <img src={region.image} alt="" />
                   <h3>{region.name}</h3>
-                </a>
+                </Link>
               </div>
             ))}
           </div>
@@ -48,36 +58,50 @@ const MainContent = () => {
 
       <h1 className="section-title">Recent Articles</h1>
       <div className="grid-style1">
-        {articlesData.map((article, index) => (
-          <div className="item col-md-4" key={index}>
-            <div className="image">
-              <a href={article.link}>
-                <span className="btn btn-default">
-                  <i className="fa fa-file-o"></i> Read More
-                </span>
-              </a>
-              <img src={article.image} alt="" />
+        {articlesData.slice(0, 3).map((article) => {
+          const isFullDescription = showFullDescription[article.id];
+          let description = article.description;
+          if (!isFullDescription) {
+            description = description.substring(0, 90) + '...';
+          }
+
+          return (
+            <div className="item col-md-4" key={article.id}>
+              <div className="image">
+                <Link to={`/articles/${article.id}`}>
+                  <span className="btn btn-default">
+                    <i className="fa fa-file-o"></i> Read More
+                  </span>
+                </Link>
+                <img src={article.image} alt="" />
+              </div>
+              <div className="tag">
+                <i className={article.tagIcon}></i>
+              </div>
+              <div className="info-blog">
+                <ul className="top-info">
+                  <li><i className="fa fa-calendar"></i> {article.date}</li>
+                  <li><i className="fa fa-comments-o"></i> {article.comments}</li>
+                  <li><i className="fa fa-tags"></i> {article.tags}</li>
+                </ul>
+                <h3>
+                  <Link to={`/articles/${article.id}`}>{article.title}</Link>
+                </h3>
+                <p>{description}
+                  <button
+                    onClick={() => toggleDescription(article.id)}
+                    className="btn btn-link">
+                    {isFullDescription ? 'Less' : 'More'}
+                  </button>
+                  </p>
+              </div>
             </div>
-            <div className="tag">
-              <i className={article.tagIcon}></i>
-            </div>
-            <div className="info-blog">
-              <ul className="top-info">
-                <li><i className="fa fa-calendar"></i> {article.date}</li>
-                <li><i className="fa fa-comments-o"></i> {article.comments}</li>
-                <li><i className="fa fa-tags"></i> {article.tags}</li>
-              </ul>
-              <h3>
-                <a href={article.link}>{article.title}</a>
-              </h3>
-              <p>{article.description}</p>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="center">
-        <a href="#" className="btn btn-default-color">View All News</a>
+        <Link to="#" className="btn btn-default-color">View All News</Link>
       </div>
     </div>
   );
