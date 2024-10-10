@@ -38,6 +38,30 @@
       "comments": 1,
       "tags": "Location, Price, House",
       "description": "Sed rutrum urna id tellus euismod gravida. Praesent placerat, mauris ac pellentesque fringilla, tortor libero condimen."
+    },
+    {
+      "id": 5,
+      "title": "New Rental Regulations Announced",
+      "text": "The government has announced new rental regulations effective from next month. Find out how this impacts you.",
+      "author": "Admin",
+      "date": "2024-08-08",
+      "image": "http://placehold.it/766x515"
+    },
+    {
+      "id": 6,
+      "title": "Top 10 Rental Properties in Sydney",
+      "text": "Explore our list of the top 10 rental properties in Sydney for the month of August.",
+      "author": "Admin",
+      "date": "2024-08-07",
+      "image": "http://placehold.it/766x515"
+    },
+    {
+      "id": 7,
+      "title": "Customer Stories: Finding the Perfect Home",
+      "text": "Read our customer stories about their journey to finding the perfect home through One Ring Rentals.",
+      "author": "Admin",
+      "date": "2024-08-06",
+      "image": "http://placehold.it/766x515"
     }
   ]
   

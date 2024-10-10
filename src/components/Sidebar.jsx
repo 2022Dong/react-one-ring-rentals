@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import dealsData from '../data/lastMinuteDeals.json';
 import activityData from '../data/activity.json';
 
@@ -13,7 +14,7 @@ const Sidebar = () => {
             {dealsData.map((deal, index) => (
               <li className="col-md-12" key={index}>
                 <div className="image">
-                  <a href={deal.link}></a>
+                  <Link to="#"></Link>
                   <img alt={deal.title} src={deal.image} />
                 </div>
 
@@ -24,16 +25,16 @@ const Sidebar = () => {
                 </ul>
 
                 <h4>
-                  <a href={deal.link}>{deal.title}</a>
+                  <Link to="#">{deal.title}</Link>
                   <p>{deal.location}</p>
                 </h4>
               </li>
             ))}
           </ul>
           <p className="center">
-            <a className="btn btn-fullcolor" href="#">
+            <Link className="btn btn-fullcolor" to="#">
               More deals
-            </a>
+            </Link>
           </p>
         </div>
         {/* <!-- END SIDEBAR ABOUT --> */}
@@ -43,13 +44,13 @@ const Sidebar = () => {
           <ul className="activity">
             {activityData.map((activity, index) => (
               <li className="col-lg-12" key={index}>
-                <a href={activity.link}>
+                <Link to="#">
                   <img src={activity.image} alt="" />
-                </a>
+                </Link>
                 <div className="info">
                   <h5>
                     {activity.user} {activity.action}{' '}
-                    <a href={activity.link}>{activity.title}</a>
+                    <Link to="#">{activity.title}</Link>
                   </h5>
                   <p>{activity.comment}</p>
                   <h6>{activity.time}</h6>

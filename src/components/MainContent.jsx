@@ -46,7 +46,7 @@ const MainContent = () => {
           <div id="regions">
             {regionsData.map((region, index) => (
               <div className="item" key={index}>
-                <Link to={region.link}>
+                <Link to="#">
                   <img src={region.image} alt="" />
                   <h3>{region.name}</h3>
                 </Link>
@@ -101,7 +101,7 @@ const MainContent = () => {
       </div>
 
       <div className="center">
-        <Link to="#" className="btn btn-default-color">View All News</Link>
+        <Link to="/news" className="btn btn-default-color">View All News</Link>
       </div>
     </div>
   );

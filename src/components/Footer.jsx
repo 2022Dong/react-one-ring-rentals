@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 import Copyright from './Copyright';
 import regionsData from '../data/regions.json';
@@ -8,9 +9,9 @@ const Footer = () => {
         <div id="footer-top" className="container">
           <div className="row">
             <div className="block col-sm-3">
-              <a href="#"
+              <Link to="#"
                 ><img src={logo} alt="One Ring Rentals"
-              /></a>
+              /></Link>
               <br /><br />
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
@@ -23,9 +24,9 @@ const Footer = () => {
             <div className="block col-sm-3">
               <h3>Helpful Links</h3>
               <ul className="footer-links">
-                <li><a href="#">All rentals</a></li>
-                <li><a href="#">List your rental</a></li>
-                <li><a href="#">Read our FAQs</a></li>
+                <li><Link to="#">All rentals</Link></li>
+                <li><Link to="#">List your rental</Link></li>
+                <li><Link to="#">Read our FAQs</Link></li>
               </ul>
           </div>
           
@@ -38,11 +39,11 @@ const Footer = () => {
                   {regionsData.slice(0, 3).map((region) => (
                     <li key={region.name}>
                       <div className="image">
-                        <a href={region.link}>
+                        <Link to={region.link}>
                           <img src={region.image} alt={region.name} />
-                        </a>
+                        </Link>
                       </div>
-                      <p><a href={region.link}>{region.name}</a></p>
+                      <p><Link to={region.link}>{region.name}</Link></p>
                     </li>
                   ))}
                 </ul>
@@ -52,11 +53,11 @@ const Footer = () => {
                   {regionsData.slice(3, 6).map((region) => (
                     <li key={region.name}>
                       <div className="image">
-                        <a href={region.link}>
+                        <Link to={region.link}>
                           <img src={region.image} alt={region.name} />
-                        </a>
+                        </Link>
                       </div>
-                      <p><a href={region.link}>{region.name}</a></p>
+                      <p><Link to={region.link}>{region.name}</Link></p>
                     </li>
                   ))}
                 </ul>
@@ -76,22 +77,22 @@ const Footer = () => {
                 {/* <!-- BEGIN SOCIAL NETWORKS --> */}
                 <ul className="social-networks">
                   <li>
-                    <a href="#"><i className="fa fa-facebook"></i></a>
+                    <Link to="#"><i className="fa fa-facebook"></i></Link>
                   </li>
                   <li>
-                    <a href="#"><i className="fa fa-twitter"></i></a>
+                    <Link to="#"><i className="fa fa-twitter"></i></Link>
                   </li>
                   <li>
-                    <a href="#"><i className="fa fa-google"></i></a>
+                    <Link to="#"><i className="fa fa-google"></i></Link>
                   </li>
                   <li>
-                    <a href="#"><i className="fa fa-pinterest"></i></a>
+                    <Link to="#"><i className="fa fa-pinterest"></i></Link>
                   </li>
                   <li>
-                    <a href="#"><i className="fa fa-youtube"></i></a>
+                    <Link to="#"><i className="fa fa-youtube"></i></Link>
                   </li>
                   <li>
-                    <a href="#"><i className="fa fa-rss"></i></a>
+                    <Link to="#"><i className="fa fa-rss"></i></Link>
                   </li>
                 </ul>
                 {/* <!-- END SOCIAL NETWORKS --> */}
