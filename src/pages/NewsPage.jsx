@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import newsData from '../data/articles.json';
 import Copyright from "../components/Copyright";
+import SectionTitle from "../components/SectionTitle";
 
 const NewsPage = () => {
   return (
@@ -9,7 +10,7 @@ const NewsPage = () => {
         <div className="container">
           <div className="row">
             <div className="main col-sm-12">
-              <h1 className="section-title">Latest News</h1>
+              <SectionTitle title="Latest News" />
               <div className="grid-style1 clearfix">
                 {newsData.map((news) => (
                   <div className="item col-md-4" key={news.id}>

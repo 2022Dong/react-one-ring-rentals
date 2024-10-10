@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import propertiesData from '../data/properties.json';
 import regionsData from '../data/regions.json';
 import articlesData from '../data/articles.json';
+import SectionTitle from './SectionTitle';
 
 const MainContent = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -16,7 +17,7 @@ const MainContent = () => {
 
   return (
     <div className="main col-sm-8">
-      <h1 className="section-title">Featured Properties</h1>
+      <SectionTitle title="Featured Properties" />
 
       <div className="grid-style1 clearfix">
         {propertiesData.slice(0, 6).map((property, index) => (
@@ -42,7 +43,7 @@ const MainContent = () => {
 
       <div className="row">
         <div className="col-sm-12">
-          <h1 className="section-title">Popular Regions</h1>
+        <SectionTitle title="Popular Regions" />
           <div id="regions">
             {regionsData.map((region, index) => (
               <div className="item" key={index}>
@@ -56,7 +57,7 @@ const MainContent = () => {
         </div>
       </div>
 
-      <h1 className="section-title">Recent Articles</h1>
+      <SectionTitle title="Recent Articles" />
       <div className="grid-style1">
         {articlesData.slice(0, 3).map((article) => {
           const isFullDescription = showFullDescription[article.id];

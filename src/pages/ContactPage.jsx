@@ -1,5 +1,6 @@
 import Copyright from "../components/Copyright"
 import { useState } from "react";
+import SectionTitle from "../components/SectionTitle";
 
 const ContactPage = () => {
   const [name, setName] = useState("");
@@ -30,7 +31,7 @@ const ContactPage = () => {
         <div className="container">
           <div className="row">
             <div className="main col-sm-12">
-              <h1 className="section-title">Contact Us</h1>
+              <SectionTitle title="Contact Us" />
               <div className="contact-form">
                 <form onSubmit={ handleSubmit }>
                   <div className="form-group">
